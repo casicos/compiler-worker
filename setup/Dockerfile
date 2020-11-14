@@ -12,7 +12,7 @@
 FROM picoded/ubuntu-openjdk-8-jdk
 
 # Add the KR repository based on daum-kakao
-RUN echo "deb http://ftp.daum.kakao.com/ubuntu/ xenial main restricted" > /etc/apt/sources.list
+RUN echo "deb http://ftp.daumkakao.com/ubuntu/ xenial main restricted universe" > /etc/apt/sources.list
 RUN apt-get update
 
 RUN apt-get install -y r-base
