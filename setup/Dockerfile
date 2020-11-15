@@ -8,14 +8,9 @@
 #
 #############################################################################
 
-# Ubuntu 16.04 LTS, with openjdk-8-jdk installed
-FROM picoded/ubuntu-openjdk-8-jdk
+# Ubuntu 16.04 LTS, with openjdk-8-jdk installed.
+FROM casicos/remote-compiler-worker-server
 
-# Add the KR repository based on daum-kakao
-RUN echo "deb http://ftp.daumkakao.com/ubuntu/ xenial main restricted universe" > /etc/apt/sources.list
+# Remove the repository to prevent of installing external tools.
+RUN echo "" > /etc/apt/sources.list
 RUN apt-get update
-
-RUN apt-get install -y r-base
-RUN apt-get install -y gcc
-RUN apt-get install -y g++
-RUN apt-get install -y python3
